@@ -28,6 +28,7 @@ data= pd.read_csv('https://raw.githubusercontent.com/NObert-Ok/Image_description
 documents = data['description'].values.astype("U")
 pred = model.fit(tfid.fit_transform(documents))
 
+
 data['cluster'] = model.labels_
 
 clusters = data.groupby('cluster')  

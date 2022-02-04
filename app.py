@@ -21,7 +21,7 @@ st.markdown(html_temp, unsafe_allow_html = True)
 # default_value_goes_here = ""
 # Content = st.text_area("Please enter news from any source below: ", default_value_goes_here)
 # result =""
-data= pd.read_csv('https://raw.githubusercontent.com/Diane10/Image_description_CLustering/main/train.csv')
+data= pd.read_csv('https://raw.githubusercontent.com/NObert-Ok/Image_description_CLustering/main/train.csv')
 # data["label"] = label_enc.fit_transform(data[["label"]])  
 # when 'Predict' is clicked, make the prediction and store it 
 

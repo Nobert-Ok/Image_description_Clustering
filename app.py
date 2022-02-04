@@ -15,8 +15,6 @@ html_temp = """
 <h4 style ="color:black;text-align:center;">Streamlit New Article Clustering App</h4> 
 </div> 
 """ 
-
-
 st.markdown(html_temp, unsafe_allow_html = True) 
 # default_value_goes_here = ""
 # Content = st.text_area("Please enter news from any source below: ", default_value_goes_here)

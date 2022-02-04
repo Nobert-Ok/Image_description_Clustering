@@ -23,20 +23,21 @@ data= pd.read_csv('https://raw.githubusercontent.com/NObert-Ok/Image_description
 # data["label"] = label_enc.fit_transform(data[["label"]])  
 # when 'Predict' is clicked, make the prediction and store it 
 
-st.dataframe(data)
 
 
-# documents = data['description'].values.astype("U")
-# pred = model.fit(tfid.fit_transform(documents))
+documents = data['description'].values.astype("U")
+model.fit(tfid.fit_transform(documents))
+
+# st.dataframe(pred)
 
 
-# data['cluster'] = model.labels_
+data['cluster'] = model.labels_
 
-# clusters = data.groupby('cluster')  
+clusters = data.groupby('cluster')  
 
-# for cluster in clusters.groups:
-#     data = clusters.get_group(cluster)[['categories','title','description']] # get title and overview columns
-#     st.dataframe(data)
+for cluster in clusters.groups:
+    data_clusters = clusters.get_group(cluster)[['categories','title','description']] # get title and overview columns
+    st.dataframe(data_clusters)
 
 #  print(dataframe(data_pred['links'].unique()))
 

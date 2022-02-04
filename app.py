@@ -33,7 +33,7 @@ clusters = data.groupby('cluster')
 
 for cluster in clusters.groups:
     data = clusters.get_group(cluster)[['categories','title','description']] # get title and overview columns
-    print(data)
+    st.dataframe(data)
 
 #  print(dataframe(data_pred['links'].unique()))
 

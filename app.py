@@ -20,7 +20,13 @@ The clustering is based on the similarity of the product image description.
 """ 
 st.markdown(html_temp, unsafe_allow_html = True) 
 
-data= pd.read_csv('https://raw.githubusercontent.com/Nobert-Ok/Image_description_Clustering/main/train.csv')
+# data= pd.read_csv('https://raw.githubusercontent.com/Nobert-Ok/Image_description_Clustering/main/train.csv')
+
+@st.cache  # No need for TTL this time. It's static data :)
+def get_data_by_state():
+	return pd.read_csv('https://raw.githubusercontent.com/Nobert-Ok/Image_description_Clustering/main/train.csv')
+
+data = get_data_by_state()
 data['image_description'] = data['description']
 data = data[data['image_description'].notna()]
 documents = data['image_description'].values.astype("U")

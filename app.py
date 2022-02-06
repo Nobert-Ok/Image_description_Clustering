@@ -23,7 +23,7 @@ data= pd.read_csv('https://raw.githubusercontent.com/Nobert-Ok/Image_description
 # data["label"] = label_enc.fit_transform(data[["label"]])  
 # when 'Predict' is clicked, make the prediction and store it 
 
-for i in range(len(3)):
+for i in range(3):
     st.text(str(i))
 
 

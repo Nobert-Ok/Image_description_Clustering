@@ -16,32 +16,28 @@ html_temp = """
 </div> 
 """ 
 st.markdown(html_temp, unsafe_allow_html = True) 
-# default_value_goes_here = ""
-# Content = st.text_area("Please enter news from any source below: ", default_value_goes_here)
-# result =""
+
 data= pd.read_csv('https://raw.githubusercontent.com/Nobert-Ok/Image_description_Clustering/main/train.csv')
-# data["label"] = label_enc.fit_transform(data[["label"]])  
-# when 'Predict' is clicked, make the prediction and store it 
+
 
 for i in range(3):
     st.text(str(i))
 
 
-documents = data['description'].values.astype("U")
+# documents = data['description'].values.astype("U")
 # model.fit(tfid.fit_transform(documents))
 
 # st.dataframe(pred)
 
 
-data['cluster'] = model.labels_
+# data['cluster'] = model.labels_
 
-clusters = data.groupby('cluster')  
+# clusters = data.groupby('cluster')  
 
-for cluster in clusters.groups:
-    data_clusters = clusters.get_group(cluster)[['categories','title','description']] # get title and overview columns
-    st.dataframe(data_clusters)
+# for cluster in clusters.groups:
+#     data_clusters = clusters.get_group(cluster)[['categories','title','description']] # get title and overview columns
+#     st.dataframe(data_clusters)
 
-#  print(dataframe(data_pred['links'].unique()))
 
 
 
